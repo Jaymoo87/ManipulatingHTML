@@ -7,6 +7,22 @@ btntext = document.createTextNode('Press Me Nicely');
 button.appendChild(btntext);
 document.body.appendChild(button);
 
+//create and insert div into the HTML
+let div = document.createElement('div')
+div.id = "colordiv"
+document.body.appendChild(div)
+
+div.addEventListener('mouseover', function(){
+
+    div.style.backgroundColor = randomColor();
+});
+
+
+div.addEventListener('mouseleave', function(){
+
+    div.style.backgroundColor = 'black';
+});
+
 //activates an alert window with a "nice?" message.
     button.addEventListener('click', function () {
 
@@ -27,6 +43,14 @@ document.body.appendChild(button);
         window.alert(msgtext);
         
         
-})
+});
+function randomColor() {
+    const r = [Math.floor(Math.random() * 256)];
+    const g = [Math.floor(Math.random() * 256)];
+    const b = [Math.floor(Math.random() * 256)];
+    
+    const headColor = "rgb(" + r + " , " + g + " , " + b + ")"
+    return headColor;
+    };
 
 });
