@@ -29,8 +29,8 @@ div.addEventListener('mouseleave', function(){
                 window.alert("Oh.. WOW.. that felt very good")
     });
 
-
-
+    
+    
     //gets button from HTML
     let msgbtn = document.getElementById("msgbtn");
     
@@ -43,14 +43,29 @@ div.addEventListener('mouseleave', function(){
         window.alert(msgtext);
         
         
-});
-function randomColor() {
-    const r = [Math.floor(Math.random() * 256)];
-    const g = [Math.floor(Math.random() * 256)];
-    const b = [Math.floor(Math.random() * 256)];
-    
-    const headColor = "rgb(" + r + " , " + g + " , " + b + ")"
-    return headColor;
+    });
+    function randomColor() {
+        const r = [Math.floor(Math.random() * 256)];
+        const g = [Math.floor(Math.random() * 256)];
+        const b = [Math.floor(Math.random() * 256)];
+        
+        const headColor = "rgb(" + r + " , " + g + " , " + b + ")"
+        return headColor;
     };
+    //create a <p> element and a textNode to fill it
+    let p = document.createElement('p')
+    let ptext = document.createTextNode('This paragraph loves to get touched. Touch it good. Touch it really good and it might change colors.... mmmmmm.')
+    
+    //puts paragraph in the HTML and the text inside the paragraph. 
+    document.body.appendChild(p)
+    p.appendChild(ptext)
 
+    // same ol' randomColor function with the variables and event changed to the proper functionality.
+    p.addEventListener('click', function(){
+
+        p.style.color = randomColor();
+    });
+
+
+    
 });
