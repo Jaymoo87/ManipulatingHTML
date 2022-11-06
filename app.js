@@ -77,14 +77,37 @@ document.body.appendChild(butdiv);
     //adds event listener to the listbutton to run a function on click.
     listbutton.addEventListener('click', function (){
 
+        // creates a <span> element and enters my name into it. 
         let span = document.createElement('span');
+        //added id for preferential css styling :).
         span.id = 'name';
         let myName = document.createTextNode("Justin 'The Vigorous' Murrah");
 
+        //adds a <span> inside the <div> in the HTML
         span.appendChild(myName);
         butdiv.appendChild(span);
-       // document.appendChild(butdiv)
-            
+    });
 
-    })
-});
+    let friendbtn = document.getElementById('ulbutton')
+    let ul = document.getElementById('friendlist')
+
+    //array of 10.... ahem... "friends".
+    const friends = ['Jen', 'Jamie', 'Emily', 'Tom', 'Sequoya', 'Melissa', 'Kristen', 'Logan', 'Rowan', 'Maximus'];
+    let friendcount = 0
+
+        friendbtn.addEventListener('click', function(){
+
+         if (friends[friendcount]) {
+             
+             friendcount++;
+             let li = document.createElement('li');
+             let friendlist = document.createTextNode(friends[friendcount]);
+             li.appendChild(friendlist);
+             ul.appendChild(li);
+           };
+            
+       });
+    });
+    
+    
+    //for (var i = 0; i > friends.length; i++) {
