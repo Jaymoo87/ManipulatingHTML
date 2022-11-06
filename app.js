@@ -93,19 +93,24 @@ document.body.appendChild(butdiv);
 
     //array of 10.... ahem... "friends".
     const friends = ['Jen', 'Jamie', 'Emily', 'Tom', 'Sequoya', 'Melissa', 'Kristen', 'Logan', 'Rowan', 'Maximus'];
-    let friendcount = 0
-
+    let friendcount = 0;
+        
+        // add click event listener to the friend button
         friendbtn.addEventListener('click', function(){
-
+            //references the friends array with the defined value of 0 (position 1 of the array).
          if (friends[friendcount]) {
-             
-             friendcount++;
+
+
+            // list item created
              let li = document.createElement('li');
+             //create textNode with the value ([array position]) of the count of the friends array
              let friendlist = document.createTextNode(friends[friendcount]);
+             //append friend name to list item and <li> to <ul>.
              li.appendChild(friendlist);
              ul.appendChild(li);
-           };
-            
+             // order of operations... add to friendcount last!!!
+             friendcount++;
+         }
        });
     });
     
