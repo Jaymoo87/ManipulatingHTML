@@ -10,3 +10,11 @@ p {
 user-select: none;
 
 }
+
+#name {
+
+    user-select: none;
+    font-size: x-large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    
+}

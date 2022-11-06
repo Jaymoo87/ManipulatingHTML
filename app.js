@@ -53,19 +53,38 @@ div.addEventListener('mouseleave', function(){
         return headColor;
     };
     //create a <p> element and a textNode to fill it
-    let p = document.createElement('p')
-    let ptext = document.createTextNode('This paragraph loves to get touched. Touch it good. Touch it really good and it might change colors.... mmmmmm.')
+    let p = document.createElement('p');
+    let ptext = document.createTextNode('This paragraph loves to get touched. Touch it good. Touch it really good and it might change colors.... mmmmmm.');
     
     //puts paragraph in the HTML and the text inside the paragraph. 
-    document.body.appendChild(p)
-    p.appendChild(ptext)
+    document.body.appendChild(p);
+    p.appendChild(ptext);
 
     // same ol' randomColor function with the variables and event changed to the proper functionality.
     p.addEventListener('click', function(){
 
         p.style.color = randomColor();
+
     });
-
-
+//create and append a button and a div below it.
+const listbutton = document.createElement('button');
+let buttext = document.createTextNode('Press me with Vigor!')
+const butdiv = document.createElement('div');
+listbutton.appendChild(buttext)
+document.body.appendChild(listbutton);
+document.body.appendChild(butdiv);
     
+    //adds event listener to the listbutton to run a function on click.
+    listbutton.addEventListener('click', function (){
+
+        let span = document.createElement('span');
+        span.id = 'name';
+        let myName = document.createTextNode("Justin 'The Vigorous' Murrah");
+
+        span.appendChild(myName);
+        butdiv.appendChild(span);
+       // document.appendChild(butdiv)
+            
+
+    })
 });
